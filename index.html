@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>汇赢棋牌茶艺会馆（中孚大厦店）- 玉石麻将 · 精品包间 · 微信预订</title>
-<meta name="description" content="汇赢棋牌茶艺会馆（中孚大厦店），位于东莞市南城区簪花路11号中孚大厦4层整层。玉石麻将、精品包间、独立卫生间、免费停车，午晚时段畅打套餐低至58.8元。">
+<meta name="description" content="汇赢棋牌茶艺会馆（中孚大厦店），位于东莞市南城区簪花路11号1单元401室。玉石麻将、精品包间、独立卫生间、免费停车，午晚时段畅打套餐低至58.8元。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --green-deep:#14352a;
@@ -43,21 +46,36 @@
   }
   .brand{display:flex;align-items:center;gap:10px;}
   .brand-mark{
-    width:36px;height:36px;border-radius:8px;
+    height:36px;padding:0 9px;border-radius:8px;
     background:linear-gradient(135deg,var(--gold),#b8945e);
     display:flex;align-items:center;justify-content:center;
-    font-size:20px;color:var(--green-deep);font-weight:bold;
+    font-size:15px;letter-spacing:1px;color:var(--green-deep);font-weight:bold;
   }
-  .brand-name{color:var(--cream);font-size:17px;font-weight:600;letter-spacing:1px;}
+  .brand-name{color:var(--cream);font-size:18px;font-weight:600;letter-spacing:2px;font-family:"Noto Serif SC",serif;}
   .brand-name small{display:block;font-size:11px;color:var(--gold);font-weight:400;letter-spacing:2px;}
-  .nav{display:flex;gap:28px;}
-  .nav a{color:var(--cream-dim);font-size:14px;transition:color .2s;}
-  .nav a:hover{color:var(--gold-bright);}
+  .nav{display:flex;gap:44px;align-items:center;}
+  .nav a{
+    color:#f0ead9;font-size:17px;font-weight:500;letter-spacing:3px;
+    font-family:"Noto Serif SC",serif;
+    padding:6px 2px;position:relative;
+    transition:color .25s;
+  }
+  .nav a:not(.nav-cta)::after{
+    content:'';position:absolute;left:50%;right:50%;bottom:0;
+    height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    transition:left .25s,right .25s;
+  }
+  .nav a:not(.nav-cta):hover{color:var(--gold-bright);}
+  .nav a:not(.nav-cta):hover::after{left:0;right:0;}
   .nav-cta{
     background:linear-gradient(135deg,var(--gold),#c49a5f);
     color:var(--green-deep)!important;font-weight:600;
-    padding:8px 20px;border-radius:20px;
+    padding:9px 22px;border-radius:20px;font-size:15px;letter-spacing:1px;
+    box-shadow:0 3px 12px rgba(212,175,122,.35);
+    transition:transform .2s,box-shadow .2s;
   }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(212,175,122,.5);}
   @media(max-width:860px){.nav{display:none;}}
 
   /* ===== 首屏 ===== */
@@ -119,7 +137,8 @@
   }
   .sec-title{
     font-size:clamp(26px,3.5vw,36px);font-weight:700;
-    color:var(--green-deep);letter-spacing:2px;
+    color:var(--green-deep);letter-spacing:3px;
+    font-family:"Noto Serif SC",serif;
   }
   .sec-title::after{
     content:"";display:block;width:56px;height:3px;
@@ -139,7 +158,6 @@
     box-shadow:0 10px 30px rgba(43,38,32,.12);
     aspect-ratio:4/3;
   }
-  .gallery-item:first-child{grid-column:span 2;aspect-ratio:auto;}
   .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
   .gallery-item:hover img{transform:scale(1.05);}
   .gallery-cap{
@@ -149,7 +167,6 @@
   }
   @media(max-width:768px){
     .gallery-grid{grid-template-columns:1fr;}
-    .gallery-item:first-child{grid-column:span 1;aspect-ratio:4/3;}
   }
 
   /* ===== 套餐价目 ===== */
@@ -224,6 +241,40 @@
   }
   .feature-card h3{font-size:17px;color:var(--green-deep);margin-bottom:8px;letter-spacing:1px;}
   .feature-card p{font-size:13.5px;color:#7a7263;}
+
+  /* ===== 常见问题 ===== */
+  .faq{background:var(--cream);}
+  .faq-cat{margin:34px 0 16px;display:flex;align-items:center;gap:12px;}
+  .faq-cat-badge{
+    flex:none;width:26px;height:26px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green-mid),var(--green-deep));
+    color:var(--gold-bright);font-size:13px;font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .faq-cat h3{font-size:18px;color:var(--green-deep);letter-spacing:1px;font-weight:600;}
+  .faq-item{
+    background:#fff;border-radius:12px;margin-bottom:10px;overflow:hidden;
+    box-shadow:0 4px 16px rgba(43,38,32,.08);
+    border:1px solid rgba(212,175,122,.25);
+  }
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:15px 18px;
+    font-size:15px;color:var(--green-deep);font-weight:600;letter-spacing:.5px;
+    display:flex;align-items:center;gap:10px;user-select:none;
+    transition:background .2s;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary:hover{background:rgba(212,175,122,.08);}
+  .faq-q-mark{flex:none;color:var(--gold);font-weight:bold;font-size:14px;}
+  .faq-item summary::after{
+    content:'+';margin-left:auto;flex:none;
+    width:22px;height:22px;border-radius:50%;
+    background:rgba(29,74,58,.1);color:var(--green-mid);
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;font-weight:bold;transition:transform .25s;
+  }
+  .faq-item[open] summary::after{content:'−';background:var(--green-mid);color:#fff;}
+  .faq-a{padding:0 18px 16px 44px;font-size:14px;line-height:1.8;color:#6b6355;}
 
   /* ===== 预订 ===== */
   .booking{background:linear-gradient(180deg,#0f2b21,var(--green-deep));}
@@ -326,13 +377,14 @@
 <div class="topbar">
   <div class="container topbar-inner">
     <a class="brand" href="#top">
-      <div class="brand-mark">汇</div>
+      <div class="brand-mark">汇赢</div>
       <div class="brand-name">汇赢棋牌茶艺会馆<small>中孚大厦店 · HUIYING CLUB</small></div>
     </a>
     <nav class="nav">
       <a href="#gallery">环境展示</a>
       <a href="#pricing">套餐价目</a>
       <a href="#features">服务特色</a>
+      <a href="#faq">常见问题</a>
       <a href="#store">门店信息</a>
       <a class="nav-cta" href="#booking">立即预订</a>
     </nav>
@@ -344,10 +396,10 @@
   <div class="container hero-content">
     <span class="hero-tag">玉石麻将 · 精品包间 · 茶艺休闲</span>
     <h1>汇赢棋牌茶艺会馆<br><span>方寸牌桌 · 自在输赢</span></h1>
-    <p class="hero-sub">东莞南城 · 中孚大厦4层整层，玉石麻将桌配备独立包间，午晚时段畅打套餐，会友品茶两相宜。</p>
+    <p class="hero-sub">东莞南城 · 簪花路11号1单元401室，玉石麻将桌配备独立包间，午晚时段畅打套餐，会友品茶两相宜。</p>
     <div class="hero-btns">
       <a class="btn-main" href="#booking">立即预订包间</a>
-      <a class="btn-ghost" href="tel:18922518696">致电 189-2251-8696</a>
+      <a class="btn-ghost" href="tel:18922518696">致电 18922518696</a>
     </div>
     <div class="hero-features">
       <span class="hero-feature">玉石麻将桌</span>
@@ -364,20 +416,68 @@
     <div class="sec-head">
       <div class="sec-eyebrow">ENVIRONMENT</div>
       <h2 class="sec-title">会馆环境</h2>
-      <p class="sec-desc">整层空间，包间、大厅、茶歇一应俱全。深绿绒布与暖木色调，安静私密，专为牌局而生。</p>
+      <p class="sec-desc">整层空间实拍，豪华包间、精品小包、台球区、休闲区一应俱全。暖木色调与大理石地面，安静私密，专为牌局而生。</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="包间实拍-豪华大包.png" alt="豪华大包间">
-        <div class="gallery-cap">精品大包间 · 采光通透 · 双桌配置</div>
+        <img src="环境实拍-01.webp" alt="豪华大包间">
+        <div class="gallery-cap">豪华大包间 · 独卫沙发 · 夜景落地窗</div>
       </div>
       <div class="gallery-item">
-        <img src="包间实拍-精品小包.png" alt="精品小包间">
-        <div class="gallery-cap">精致小包 · 独立卫生间</div>
+        <img src="环境实拍-02.webp" alt="精品小包间">
+        <div class="gallery-cap">精品小包间 · 独立卫生间 · 茶水自助</div>
       </div>
       <div class="gallery-item">
-        <img src="茶艺休憩区.png" alt="茶艺休憩区">
-        <div class="gallery-cap">茶艺休憩区 · 功夫茶待客</div>
+        <img src="环境实拍-03.webp" alt="豪华大包间">
+        <div class="gallery-cap">豪华大包间 · 休闲沙发区 · 城市夜景</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-04.webp" alt="精品包间">
+        <div class="gallery-cap">精品包间 · 独卫沙发 · 温馨牌局</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-05.webp" alt="豪华包间">
+        <div class="gallery-cap">豪华包间 · 专业净烟 · 尽兴畅打</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-06.webp" alt="精品包间">
+        <div class="gallery-cap">精品包间 · 皮质沙发 · 静谧私密</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-07.webp" alt="舒适包间">
+        <div class="gallery-cap">舒适包间 · 独卫沙发 · 品质牌桌</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-08.webp" alt="豪华包间">
+        <div class="gallery-cap">豪华包间 · 全景落地窗 · 观景牌局</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-09.webp" alt="精品大包间">
+        <div class="gallery-cap">精品大包间 · 独卫沙发 · 长夜首选</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-10.webp" alt="会馆走廊">
+        <div class="gallery-cap">会馆走廊 · 典雅舒适</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-11.webp" alt="台球休闲区">
+        <div class="gallery-cap">台球休闲区 · 桌球娱乐</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-12.webp" alt="休闲等候区">
+        <div class="gallery-cap">休闲等候区 · 品茗会友</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-13.webp" alt="前台大厅">
+        <div class="gallery-cap">前台大厅 · 贴心接待</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-14.webp" alt="会馆大堂">
+        <div class="gallery-cap">会馆大堂 · 通透格局</div>
+      </div>
+      <div class="gallery-item">
+        <img src="环境实拍-15.webp" alt="会馆走廊">
+        <div class="gallery-cap">会馆走廊 · 静谧氛围</div>
       </div>
     </div>
   </div>
@@ -405,7 +505,7 @@
       <div class="price-card hot">
         <div class="hot-badge">人气推荐</div>
         <div class="pc-type">全天特惠</div>
-        <div class="pc-name">全天特惠小包<br>玉石麻将+带独卫</div>
+        <div class="pc-name">全天特惠小包<br>玉石麻将+带独卫沙发</div>
         <div class="pc-meta"><span>全天</span><span>4小时</span><span>小包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>58.8</span>
@@ -425,7 +525,7 @@
       </div>
       <div class="price-card">
         <div class="pc-type">晚间时段</div>
-        <div class="pc-name">晚间精品大包<br>玉石麻将+带独卫</div>
+        <div class="pc-name">晚间精品大包<br>玉石麻将+带独卫沙发</div>
         <div class="pc-meta"><span>晚间</span><span>4小时</span><span>大包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>88.8</span>
@@ -435,7 +535,7 @@
       </div>
       <div class="price-card">
         <div class="pc-type">午间时段</div>
-        <div class="pc-name">午间小包<br>玉石麻将+免费停车+独立厕所</div>
+        <div class="pc-name">午间小包<br>玉石麻将+免费停车+独卫沙发</div>
         <div class="pc-meta"><span>午间</span><span>6小时</span><span>小包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>98.8</span>
@@ -445,7 +545,7 @@
       </div>
       <div class="price-card">
         <div class="pc-type">晚间时段</div>
-        <div class="pc-name">晚间小包棋牌<br>玉石麻将+带独卫</div>
+        <div class="pc-name">晚间小包棋牌<br>玉石麻将+带独卫沙发</div>
         <div class="pc-meta"><span>晚间</span><span>6小时</span><span>小包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>108.8</span>
@@ -455,7 +555,7 @@
       </div>
       <div class="price-card">
         <div class="pc-type">午间时段</div>
-        <div class="pc-name">午间大包棋牌<br>玉石麻将+带厕所</div>
+        <div class="pc-name">午间大包棋牌<br>玉石麻将+带独卫沙发</div>
         <div class="pc-meta"><span>午间</span><span>6小时</span><span>大包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>118.8</span>
@@ -465,7 +565,7 @@
       </div>
       <div class="price-card">
         <div class="pc-type">晚间时段</div>
-        <div class="pc-name">晚间大包<br>玉石麻将+免费停车+带独卫</div>
+        <div class="pc-name">晚间大包<br>玉石麻将+免费停车+带独卫沙发</div>
         <div class="pc-meta"><span>晚间</span><span>6小时</span><span>大包</span></div>
         <div class="pc-price">
           <span class="pc-now"><small>¥</small>136.8</span>
@@ -510,6 +610,122 @@
   </div>
 </section>
 
+<!-- 常见问题 -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">FAQ</div>
+      <h2 class="sec-title">常见问题</h2>
+      <p class="sec-desc">百问百答 · 关于预订、包间、消费，您想知道的都在这里。</p>
+    </div>
+
+    <div class="faq-cat">
+      <div class="faq-cat-badge">一</div>
+      <h3>预订与到店</h3>
+    </div>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q1</span>如何预订包间？需要提前多久预约？</summary>
+      <div class="faq-a">您可通过电话（18922518696）直接预订。建议提前预约以确保心仪时段，周末及节假日建议提前1天。临时到店视当日空房情况而定。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q2</span>包间可以预订多长时间？最低消费是多少？</summary>
+      <div class="faq-a">会馆全天24小时营业，包间预定可以预定1小时体验套餐，也可以预定4小时或者6小时套餐。会馆按包间时段计费，不设最低消费，4 人局人均约 15–35 元/小时，含免费停车、免费水果小食与茶艺服务。会馆主打高性价比定位，收费灵活透明，详情可致电18922518696了解。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q3</span>临时有事可以取消或改期吗？</summary>
+      <div class="faq-a">可以。建议至少提前2小时联系前台取消或改期，以便释放包间给其他客人。具体政策请以预订时告知为准。</div>
+    </details>
+
+    <div class="faq-cat">
+      <div class="faq-cat-badge">二</div>
+      <h3>包间与设施</h3>
+    </div>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q4</span>有多少个包间？包间条件怎么样？</summary>
+      <div class="faq-a">会馆拥有15间豪华包间，全部带窗户，自然采光通风良好。每间均配备独立卫生间，私密性极佳。包间配置高端玉石麻将，触感温润、质感出众。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q5</span>包间可以坐几个人？有不同大小的包间吗？</summary>
+      <div class="faq-a">15间包间可满足不同人数需求，从三五好友小聚到多人商务接待均可。具体房型及容纳人数请致电咨询。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q6</span>包间内可以吸烟吗？</summary>
+      <div class="faq-a">设有可吸烟包间与禁烟包间，预订时可指定，包间通风良好且配有窗户。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q7</span>有Wi-Fi吗？</summary>
+      <div class="faq-a">会馆提供免费Wi-Fi，满足您上网需求。</div>
+    </details>
+
+    <div class="faq-cat">
+      <div class="faq-cat-badge">三</div>
+      <h3>服务与配套</h3>
+    </div>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q8</span>营业时间是什么时候？</summary>
+      <div class="faq-a">会馆24小时全天候营业，无论白天黑夜随时恭候。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q9</span>有停车位吗？收费吗？</summary>
+      <div class="faq-a">会馆提供免费停车服务，驾车前来无需担心停车费用和车位问题。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q10</span>有提供餐饮或零食吗？</summary>
+      <div class="faq-a">会馆为宾客免费赠送水果小食。此外会馆也提供茶艺服务，精选优质茗茶，让您在娱乐之余品茗论道。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q11</span>有专业服务人员吗？</summary>
+      <div class="faq-a">会馆拥有训练有素的专业服务团队，从迎宾接待到茶艺服务全程贴心服务。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q12</span>适合家庭聚会吗？</summary>
+      <div class="faq-a">非常适合。包间带窗通风好、独立卫生间适合家庭聚会，环境舒适不闷。</div>
+    </details>
+
+    <div class="faq-cat">
+      <div class="faq-cat-badge">四</div>
+      <h3>消费与支付</h3>
+    </div>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q13</span>价格怎么样？贵吗？</summary>
+      <div class="faq-a">汇赢棋牌茶艺会馆（中孚大厦店）的价格采用时段 + 房型的包时段计费，不是按人头计时。目前美团/大众点评在售团购1 小时体验 ¥18.8 起；4 小时包段 ¥58.8–88.8；6 小时包段 ¥98.8–136.8。折算下来，4 人局人均约 15–35 元/小时，含免费停车、免费水果小食与茶艺服务。门市散客价与会员政策请致电 18922518696 确认。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q14</span>支持哪些支付方式？</summary>
+      <div class="faq-a">支持现金、微信、支付宝及银行卡等多种支付方式，方便快捷。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q15</span>有会员卡或充值优惠吗？</summary>
+      <div class="faq-a">具体会员政策请到店咨询或致电了解。</div>
+    </details>
+
+    <div class="faq-cat">
+      <div class="faq-cat-badge">五</div>
+      <h3>其他常见问题</h3>
+    </div>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q16</span>适合商务接待吗？</summary>
+      <div class="faq-a">非常合适。整层1200平方米独立空间，15间豪华包间均带独立卫生间，私密性好、档次高，是商务接待的理想之选。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q17</span>会馆的具体位置在哪里？</summary>
+      <div class="faq-a">位于广东省东莞市南城区簪花路11号1单元401室。紧邻海德·汇一城，市民中心，🚇 地铁 2 号线「鸿福路站」B 出口出，步行约 700 米 /8-10 分钟。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q18</span>宠物可以带入吗？</summary>
+      <div class="faq-a">会馆为宠物友好场所，欢迎携带宠物，但请务必看管好爱宠，避免影响其他客人。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q19</span>可以自带酒水食物吗？</summary>
+      <div class="faq-a">可以。</div>
+    </details>
+    <details class="faq-item">
+      <summary><span class="faq-q-mark">Q20</span>有最低年龄限制吗？</summary>
+      <div class="faq-a">棋牌娱乐场所一般建议成年人消费，具体请以店内规定为准。</div>
+    </details>
+  </div>
+</section>
+
 <!-- 微信预订 -->
 <section class="booking" id="booking">
   <div class="container">
@@ -539,7 +755,7 @@
           <p>客服即时回复确认，包间为您保留，到店即开台。</p>
         </div>
         <div class="ba-call">— 电话预订同样欢迎 —</div>
-        <a class="ba-tel" href="tel:18922518696">189-2251-8696</a>
+        <a class="ba-tel" href="tel:18922518696">18922518696</a>
       </aside>
     </div>
   </div>
@@ -554,35 +770,42 @@
     </div>
     <div class="store-grid">
       <div class="store-img">
-        <img src="首屏大图-会馆大堂.png" alt="汇赢棋牌茶艺会馆大堂">
+        <img src="门店形象墙.png" alt="汇赢棋牌会馆形象墙">
       </div>
       <div>
         <div class="info-item">
           <div class="info-icon">📍</div>
           <div>
             <h4>门店地址</h4>
-            <p>广东省东莞市南城区簪花路11号 中孚大厦4层整层</p>
+            <p>广东省东莞市南城区簪花路11号1单元401室</p>
           </div>
         </div>
         <div class="info-item">
           <div class="info-icon">📞</div>
           <div>
             <h4>预订电话</h4>
-            <p><a href="tel:18922518696">189-2251-8696</a></p>
+            <p><a href="tel:18922518696">18922518696</a>（微信同号）</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🌐</div>
+          <div>
+            <h4>网址</h4>
+            <p><a href="https://hyqp.bbroot.com/" target="_blank" rel="noopener">汇赢棋牌茶艺会馆（中孚大厦店）</a></p>
           </div>
         </div>
         <div class="info-item">
           <div class="info-icon">🕘</div>
           <div>
             <h4>营业时间</h4>
-            <p>全天营业，午间场、晚间场均可预订</p>
+            <p>24小时</p>
           </div>
         </div>
         <div class="info-item">
-          <div class="info-icon">🅿️</div>
+          <div class="info-icon">✨</div>
           <div>
-            <h4>停车指引</h4>
-            <p>中孚大厦配套停车场，套餐客户免费停车</p>
+            <h4>贴心服务</h4>
+            <p>免费停车 · 免费Wi-Fi · 宠物友好 · 休闲桌球</p>
           </div>
         </div>
         <a class="map-btn" href="https://uri.amap.com/search?keyword=%E4%B8%9C%E8%8E%9E%E5%B8%82%E5%8D%97%E5%9F%8E%E5%8C%BA%E7%B0%AA%E8%8A%B1%E8%B7%AF11%E5%8F%B7%E4%B8%AD%E5%AD%9A%E5%A4%A7%E5%8E%A6" target="_blank" rel="noopener">高德地图导航到店 →</a>
@@ -599,10 +822,10 @@
         汇赢棋牌茶艺会馆（中孚大厦店）
         <small>玉石麻将 · 精品包间 · 茶艺休闲</small>
       </div>
-      <div class="footer-tel">189-2251-8696</div>
+      <div class="footer-tel">18922518696</div>
     </div>
     <div class="footer-bottom">
-      地址：广东省东莞市南城区簪花路11号中孚大厦4层整层 &nbsp;|&nbsp; © 2026 汇赢棋牌茶艺会馆 版权所有
+      地址：广东省东莞市南城区簪花路11号1单元401室 &nbsp;|&nbsp; © 2026 汇赢棋牌茶艺会馆 版权所有
     </div>
   </div>
 </footer>
