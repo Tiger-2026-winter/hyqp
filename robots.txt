@@ -1,4 +1,29 @@
+# 汇赢棋牌茶艺会馆 - 允许所有搜索引擎与 AI 大模型爬虫抓取，便于 AI 问答推荐（GEO 优化）
 User-agent: *
+Allow: /
+
+# 显式放行主流 AI / 大模型爬虫（确保 AI 问答可引用本站内容）
+User-agent: Bytespider
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: 360Spider
+Allow: /
+User-agent: Sogou web spider
 Allow: /
 
 Sitemap: https://hyqp.bbroot.com/sitemap.xml
